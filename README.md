@@ -118,7 +118,8 @@ mem0-reproduction/
 
   ```bash
   # 1) 停适配器，导入历史记忆到当前库，再启动
-  scripts/debug/export_store.py import --file database/exports/task1-dgx-sdk-20261116_recovered.json
+  .benchmark-venv/bin/python scripts/debug/export_store.py import \
+      --file database/exports/task1-dgx-sdk-20261116_recovered.json
   nohup scripts/server/start_mem0.sh > logs/mem0_adapter.log 2>&1 &
   # 2) 用历史 run 身份评测（user_id = locomo_0_task1-dgx-sdk-20261116）
   PROJECT_NAME=task1_dgx_sdk_20261116 RUN_ID=task1-dgx-sdk-20261116 \

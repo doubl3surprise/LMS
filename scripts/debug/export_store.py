@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 import urllib.parse
@@ -39,6 +40,15 @@ def adapter_alive(adapter: str) -> bool:
             return resp.status == 200
     except Exception:
         return False
+
+
+def adapter_qdrant_path(adapter: str) -> str | None:
+    """返回适配器正在使用的 Qdrant 路径（用于判断是否真的会锁冲突）。"""
+    try:
+        with urllib.request.urlopen(f"{adapter.rstrip('/')}/stats", timeout=10) as resp:
+            return json.load(resp).get("qdrant_path")
+    except Exception:
+        return None
 
 
 def export_via_adapter(adapter: str, user_id: str, out: Path) -> dict:
@@ -107,9 +117,14 @@ def do_import(args: argparse.Namespace) -> int:
     from qdrant_client import QdrantClient, models
 
     if adapter_alive(args.adapter):
-        print("[error] 适配器正在运行，Qdrant 文件锁被占用；先停它再导入：", file=sys.stderr)
-        print("        pkill -f 'local_mem0_server:app'", file=sys.stderr)
-        return 1
+        adapter_path = adapter_qdrant_path(args.adapter)
+        same_store = adapter_path is None or os.path.realpath(adapter_path) == os.path.realpath(args.qdrant)
+        if same_store:
+            print("[error] 适配器正在使用同一个 Qdrant 路径（文件锁冲突）；先停它再导入：", file=sys.stderr)
+            print(f"        适配器路径: {adapter_path}", file=sys.stderr)
+            print("        停止: 找到 uvicorn 的 PID 后 kill -TERM <pid>", file=sys.stderr)
+            return 1
+        print(f"[info] 适配器用的是 {adapter_path}，与目标 {args.qdrant} 不同，可以安全导入")
 
     payload = json.loads(Path(args.file).read_text())
     points = payload.get("points", [])

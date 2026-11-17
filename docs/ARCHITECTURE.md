@@ -211,3 +211,12 @@ scripts/eval/run_locomo.sh status
    抽取返回 `[]` 与"确实没内容"无法区分。当前按单轮（chunk_size=1）送，规避了这点。
 6. **`max_tokens=64` 会截断 7 步扫描模板**，产生"看起来 20%"的假结果。当前用简洁
    直答模板 + 128 token，两者不能混用。
+7. **runner 的 HTTP 超时必须大于一次抽取的最坏耗时**。适配器没有关闭 thinking，
+   抽取输出上限 2048 token，DGX 解码约 4.5 token/s → 单个 chunk 最坏约 450s。
+   旧的 300s 超时会让 runner "判失败并重试"，而适配器其实已经写库，于是同一条记忆
+   被写两次（点 ID 是 uuid4，不会自动覆盖）。现默认 `MEM0_HTTP_TIMEOUT=900`，
+   并用 `scripts/debug/check_duplicates.py` 校验文本层是否有重复。
+8. **适配器被 Ctrl-C/`kill` 后可能仍占着 Qdrant 锁**：uvicorn 会等在处理中的
+   抽取线程上，端口已经释放但 `.lock` 还被持有，表现为重启时报
+   `Storage folder ... already accessed by another instance`。确认没有写入在进行后，
+   对该 PID 用 `kill -KILL`，再启动适配器。

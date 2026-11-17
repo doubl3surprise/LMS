@@ -115,6 +115,9 @@ activate_venv() {
     export OPENAI_BASE_URL="http://127.0.0.1:8000/v1"
     export OPENAI_API_KEY="dummy"
     export MEM0_TELEMETRY=false
+    # runner→适配器 的 HTTP 超时必须大于一次抽取的最坏耗时（thinking 模式 2048 token
+    # 在 DGX 上约 450s）。旧的 300s 会在适配器已写库时判失败并重试，造成重复记忆。
+    export MEM0_HTTP_TIMEOUT="${MEM0_HTTP_TIMEOUT:-900}"
     export FASTEMBED_CACHE_PATH="$REPO_ROOT/models"
     export HF_ENDPOINT="https://hf-mirror.com"
 }

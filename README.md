@@ -171,6 +171,8 @@ DGX 上 decode 占端到端 83%；换成完整历史（约 1.51 万输入 token�
 | 答案被截断成半句、judge 说 "incomplete" | 7 步扫描模板配了小 `max_tokens`。用 `eval/run_locomo.py`（简洁模板 + 128 token） |
 | 适配器启动即失败 | 另一个适配器进程还活着（文件锁）。`pkill -f local_mem0_server` 后重启 |
 | ingest 中途断了 | 直接重跑 `./run_locomo.sh ingest`，checkpoint `_progress_0.json` 会跳过已完成 chunk |
+| 同一批记忆出现重复 | runner 的 HTTP 超时（`MEM0_HTTP_TIMEOUT`，默认 900s）小于一次抽取的最坏耗时。用 `scripts/debug/check_duplicates.py --user-id ...` 校验 |
+| 停掉适配器后重启报 Qdrant 锁被占用 | 旧进程还活着（uvicorn 卡在处理中的请求）。确认无写入后 `kill -KILL <pid>`，再启动 |
 
 ---
 

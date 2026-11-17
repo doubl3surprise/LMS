@@ -60,7 +60,7 @@ class Mem0Client:
         max_retries: int = 5,
         retry_delay: float = 5.0,
         rpm: int = 60,
-        timeout: float = 300.0,
+        timeout: float = float(os.getenv("MEM0_HTTP_TIMEOUT", "900")),
         event_poll_interval: float = 0.5,
         event_poll_timeout: float = 300.0,
     ):

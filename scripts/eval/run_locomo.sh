@@ -80,6 +80,8 @@ check_memories() {
 activate_venv() {
     source "$VENV/bin/activate"
     cd "$BENCH_DIR"
+    export OPENAI_BASE_URL="http://127.0.0.1:8000/v1"
+    export OPENAI_API_KEY="dummy"
 }
 
 # ---- 运行评测 ----

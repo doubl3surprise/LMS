@@ -1,0 +1,71 @@
+name: jiangchuan-qwen38
+services:
+  model:
+    image: lmsysorg/sglang:qwen38-27b
+    pull_policy: never
+    container_name: jiangchuan-qwen38-zh
+    restart: unless-stopped
+    gpus: all
+    shm_size: 8gb
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./models/Qwen3.8-27B:/model:ro
+      - ./cache:/root/.cache
+      - ./cache/triton:/root/.triton
+    environment:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    entrypoint: ["python3", "-m", "sglang.launch_server"]
+    command:
+      - --model-path
+      - /model
+      - --served-model-name
+      - qwen3.8-27b-zh
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+      - --dtype
+      - bfloat16
+      - --mem-fraction-static
+      - "0.75"
+      - --context-length
+      - "32768"
+      - --max-total-tokens
+      - "65536"
+      - --max-running-requests
+      - "2"
+      - --max-mamba-cache-size
+      - "8"
+      - --mamba-ssm-dtype
+      - float32
+      - --attention-backend
+      - flashinfer
+      - --chunked-prefill-size
+      - "4096"
+      - --cuda-graph-max-bs-decode
+      - "2"
+      - --reasoning-parser
+      - qwen3
+      - --tool-call-parser
+      - qwen3_coder
+      - --chat-template
+      - /model/chat_template.jinja
+      - --default-chat-template-kwargs
+      - '{"enable_thinking":false}'
+      - --sampling-defaults
+      - openai
+      - --enable-metrics
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 15m
+      retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: 20m
+        max-file: "3"

@@ -1,0 +1,37 @@
+{
+  "platform": "dgx",
+  "image_id": "sha256:0076dffa60b76b7bf033c04d05e0cc69d46f2b8cd60aa2468827782afe9bc38f",
+  "image_tag_before": "lmsysorg/sglang:qwen38-27b",
+  "image_labels": {
+    "ai.radixark.flashinfer.prebuilt_nightly": "0.6.18.dev20260807",
+    "ai.radixark.flashinfer.python_git_commit": "906181e3f4cf4bcc81835fb480db4011bbd80b62",
+    "ai.sglang.build.commit": "c4271c3fe1262fc2adbd162c33b25de5255251c5",
+    "ai.sglang.build.url": "https://github.com/sgl-project/sglang/actions/runs/31757139994",
+    "ai.sglang.image.tag": "lmsysorg/sglang:nightly-dev-20260814-c4271c3f",
+    "com.nvidia.cudnn.version": "9.14.0.64-1",
+    "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
+    "org.opencontainers.image.revision": "c4271c3fe1262fc2adbd162c33b25de5255251c5",
+    "org.opencontainers.image.source": "https://github.com/sgl-project/sglang",
+    "org.opencontainers.image.url": "https://github.com/sgl-project/sglang/actions/runs/31757139994",
+    "org.opencontainers.image.version": "lmsysorg/sglang:nightly-dev-20260814-c4271c3f"
+  },
+  "versions": {
+    "sglang": "0.0.0.dev0+qwen38.27b.g561c8f3",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.12.1",
+    "tokenizers": "0.22.2",
+    "flashinfer-python": "0.6.18",
+    "sgl-kernel": null
+  },
+  "benchmark_versions": {
+    "mem0ai": "2.2.1",
+    "fastembed": "0.9.1",
+    "qdrant-client": "1.20.0",
+    "numpy": "2.5.4",
+    "onnxruntime": "1.31.1",
+    "openai": "3.46.0",
+    "psutil": "7.2.2"
+  },
+  "backup": "/home/jiangchuan/mem0-reproduction/model-serving/backups/20261113_200658",
+  "common_tokenizer_config_sha256": "60e96a382893c9efeb7116fb83e2c532cb149d00bfd859713640c0a8ae282019"
+}

@@ -1,0 +1,1532 @@
+{
+  "per_question": [
+    {
+      "qid": "conv0_q0",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q1",
+      "category": "temporal",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q10",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q100",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q101",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q102",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 4
+    },
+    {
+      "qid": "conv0_q103",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 4
+    },
+    {
+      "qid": "conv0_q104",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 4
+    },
+    {
+      "qid": "conv0_q105",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q106",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q107",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q108",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q109",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q11",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q110",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q111",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q112",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q113",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q114",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q115",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q116",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q117",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 4
+    },
+    {
+      "qid": "conv0_q118",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q119",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q12",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q120",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q121",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q122",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q123",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q124",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q125",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q126",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q127",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q128",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q129",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q13",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q130",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q131",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q132",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q133",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q134",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q135",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q136",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q137",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q138",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q139",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 5,
+      "n_redundant": 5,
+      "collapse_ratio": 0.5,
+      "max_cluster_size": 5
+    },
+    {
+      "qid": "conv0_q14",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q140",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q141",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q142",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q143",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q144",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q145",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q146",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q147",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q148",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q149",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q15",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q150",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q151",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q16",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q17",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 6,
+      "n_redundant": 4,
+      "collapse_ratio": 0.4,
+      "max_cluster_size": 5
+    },
+    {
+      "qid": "conv0_q18",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q19",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q2",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q20",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q21",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q22",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 4
+    },
+    {
+      "qid": "conv0_q23",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 4
+    },
+    {
+      "qid": "conv0_q24",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q25",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q26",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 4
+    },
+    {
+      "qid": "conv0_q27",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q28",
+      "category": "temporal",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q29",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q3",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q30",
+      "category": "open-domain",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q31",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q32",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q33",
+      "category": "temporal",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q34",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q35",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q36",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q37",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q38",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q39",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q4",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q40",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q41",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q42",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q43",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q44",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q45",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q46",
+      "category": "open-domain",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q47",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q48",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q49",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q5",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q50",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q51",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q52",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q53",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q54",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q55",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q56",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q57",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q58",
+      "category": "temporal",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q59",
+      "category": "open-domain",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q6",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q60",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q61",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q62",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q63",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q64",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q65",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q66",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q67",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q68",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q69",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q7",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q70",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q71",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 4
+    },
+    {
+      "qid": "conv0_q72",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q73",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q74",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q75",
+      "category": "multi-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q76",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q77",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q78",
+      "category": "multi-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q79",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 8,
+      "n_redundant": 2,
+      "collapse_ratio": 0.2,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q8",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q80",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q81",
+      "category": "open-domain",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q82",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q83",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q84",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 7,
+      "n_redundant": 3,
+      "collapse_ratio": 0.3,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q85",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q86",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q87",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q88",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q89",
+      "category": "single-hop",
+      "correct": false,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q9",
+      "category": "temporal",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q90",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q91",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q92",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q93",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q94",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q95",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 6,
+      "n_redundant": 4,
+      "collapse_ratio": 0.4,
+      "max_cluster_size": 3
+    },
+    {
+      "qid": "conv0_q96",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q97",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 9,
+      "n_redundant": 1,
+      "collapse_ratio": 0.1,
+      "max_cluster_size": 2
+    },
+    {
+      "qid": "conv0_q98",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    },
+    {
+      "qid": "conv0_q99",
+      "category": "single-hop",
+      "correct": true,
+      "n_retrieved": 10,
+      "n_unique": 10,
+      "n_redundant": 0,
+      "collapse_ratio": 0.0,
+      "max_cluster_size": 1
+    }
+  ],
+  "summary": {
+    "avg_collapse_ratio": 0.08355263157894736,
+    "avg_unique_slots": 9.164473684210526,
+    "severe_cases": 15,
+    "severe_wrong": 4,
+    "severe_error_rate": 0.26666666666666666,
+    "overall_error_rate": 0.19078947368421054
+  }
+}

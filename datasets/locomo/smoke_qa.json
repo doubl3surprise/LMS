@@ -1,0 +1,53 @@
+{
+  "sample_id": "conv-26",
+  "category": 4,
+  "category_name": "single-hop",
+  "selection_rule": "First 5 eligible questions in original dataset order",
+  "qa": [
+    {
+      "qa_index": 82,
+      "question": "What did the charity race raise awareness for?",
+      "answer": "mental health",
+      "evidence": [
+        "D2:2"
+      ],
+      "category": 4
+    },
+    {
+      "qa_index": 83,
+      "question": "What did Melanie realize after the charity race?",
+      "answer": "self-care is important",
+      "evidence": [
+        "D2:3"
+      ],
+      "category": 4
+    },
+    {
+      "qa_index": 84,
+      "question": "How does Melanie prioritize self-care?",
+      "answer": "by carving out some me-time each day for activities like running, reading, or playing the violin",
+      "evidence": [
+        "D2:5"
+      ],
+      "category": 4
+    },
+    {
+      "qa_index": 85,
+      "question": "What are Caroline's plans for the summer?",
+      "answer": "researching adoption agencies",
+      "evidence": [
+        "D2:8"
+      ],
+      "category": 4
+    },
+    {
+      "qa_index": 86,
+      "question": "What type of individuals does the adoption agency Caroline is considering support?",
+      "answer": "LGBTQ+ individuals",
+      "evidence": [
+        "D2:12"
+      ],
+      "category": 4
+    }
+  ]
+}

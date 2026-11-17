@@ -1,0 +1,101 @@
+{
+  "name": "jiangchuan-qwen38",
+  "services": {
+    "model": {
+      "image": "sha256:0076dffa60b76b7bf033c04d05e0cc69d46f2b8cd60aa2468827782afe9bc38f",
+      "pull_policy": "never",
+      "container_name": "jiangchuan-qwen38-zh",
+      "restart": "unless-stopped",
+      "gpus": "all",
+      "volumes": [
+        "/home/jiangchuan/mem0-reproduction/model-serving/models/Qwen3.8-27B:/model:ro",
+        "/home/jiangchuan/mem0-reproduction/model-serving/cache:/root/.cache",
+        "/home/jiangchuan/mem0-reproduction/model-serving/cache/triton:/root/.triton",
+        "/home/jiangchuan/mem0-reproduction/model-serving/experiment:/experiment:ro"
+      ],
+      "environment": {
+        "HF_HUB_OFFLINE": "1",
+        "TRANSFORMERS_OFFLINE": "1",
+        "HF_HUB_DISABLE_TELEMETRY": "1"
+      },
+      "entrypoint": [
+        "python3",
+        "-m",
+        "sglang.launch_server"
+      ],
+      "command": [
+        "--model-path",
+        "/model",
+        "--tp",
+        "1",
+        "--served-model-name",
+        "qwen3.8-27b-zh",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--dtype",
+        "bfloat16",
+        "--context-length",
+        "32768",
+        "--max-total-tokens",
+        "65536",
+        "--max-running-requests",
+        "2",
+        "--mem-fraction-static",
+        "0.75",
+        "--max-mamba-cache-size",
+        "8",
+        "--mamba-ssm-dtype",
+        "float32",
+        "--attention-backend",
+        "flashinfer",
+        "--sampling-backend",
+        "flashinfer",
+        "--chunked-prefill-size",
+        "4096",
+        "--cuda-graph-max-bs-decode",
+        "2",
+        "--random-seed",
+        "42",
+        "--reasoning-parser",
+        "qwen3",
+        "--tool-call-parser",
+        "qwen3_coder",
+        "--sampling-defaults",
+        "openai",
+        "--default-chat-template-kwargs",
+        "{\"enable_thinking\":false}",
+        "--enable-metrics",
+        "--enable-cache-report",
+        "--chat-template",
+        "/experiment/chat_template.jinja",
+        "--tokenizer-path",
+        "/experiment/tokenizer"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)"
+        ],
+        "interval": "30s",
+        "timeout": "10s",
+        "start_period": "15m",
+        "retries": 5
+      },
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "20m",
+          "max-file": "3"
+        }
+      },
+      "shm_size": "8gb",
+      "ports": [
+        "127.0.0.1:8000:8000"
+      ]
+    }
+  }
+}

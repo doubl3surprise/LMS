@@ -1,0 +1,170 @@
+{
+  "method": "Entity-Centric Query Decomposition (ECQD)",
+  "total_tested": 10,
+  "improved": 0,
+  "improvement_rate": 0.0,
+  "cases": [
+    {
+      "qid": "conv0_q11",
+      "question": "Where did Caroline move from 4 years ago?",
+      "gold": "Sweden",
+      "sub_queries": [
+        "Where did Caroline move from 4 years ago?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 3,
+      "n_unique": 3,
+      "original_answer": "Based on memory record #1, Caroline moved from her **home country** 4 years ago.",
+      "ecqd_answer": "The provided memory records do not contain information about where Caroline moved from 4 years ago.",
+      "gold_coverage_original": 0.0,
+      "gold_coverage_ecqd": 0.0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q23",
+      "question": "What books has Melanie read?",
+      "gold": "\"Nothing is Impossible\", \"Charlotte's Web\"",
+      "sub_queries": [
+        "What books has Melanie read?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 3,
+      "n_unique": 3,
+      "original_answer": "Based on the provided memory records, here are the books Melanie has read:\n\n1.  **A book recommended by Caroline**: Melanie is currently reading this book (as of October 2023) while recovering from an injury. The specific title is not mentioned in the records.\n2.  **A book with a cover featuring a gold coin**: Melanie read this book last year (relative to July 12, 2023, so likely in 2022). She noted that it reminds her to always pursue her dreams. The specific title is not mentioned in the records.\n3.",
+      "ecqd_answer": "Based on the memory records, the specific titles of books Melanie has read are not listed. The records only indicate that she has a bookshelf filled with books and is currently reading a book recommended by Caroline.",
+      "gold_coverage_original": 0.0,
+      "gold_coverage_ecqd": 0.0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q37",
+      "question": "What did Melanie paint recently?",
+      "gold": "sunset",
+      "sub_queries": [
+        "What did Melanie paint recently?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 3,
+      "n_unique": 3,
+      "original_answer": "Based on the memory records provided, Melanie has recently painted a **sunflower on canvas**.\n\nThis is supported by records #1 and #2, which explicitly state that she \"recently painted a sunflower on canvas\" and \"recently completed a painting of a sunflower on canvas.\" While she also recently painted a horse on a wooden wall (records #5 and #6, dated August 23, 2023), the sunflower painting is described in the present perfect tense (\"recently painted/completed\") without a specific past date, making it the most current \"recent\" activity relative to the conversation time",
+      "ecqd_answer": "Melanie recently painted a horse on a wooden wall.",
+      "gold_coverage_original": 0.0,
+      "gold_coverage_ecqd": 0.0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q40",
+      "question": "How many times has Melanie gone to the beach in 2023?",
+      "gold": "2",
+      "sub_queries": [
+        "How many times has Melanie gone to the beach in 2023?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 3,
+      "n_unique": 3,
+      "original_answer": "Based on the provided memory records, there is no specific information stating how many times Melanie went to the beach in 2023.\n\nRecord #4 mentions that \"her family only goes to the beach once or twice a year,\" but it does not specify if this occurred in 2023, nor does it confirm the exact number of times for that specific year. The other records mention camping, road trips, and hiking, but do not provide a count of beach visits for 2023.\n\nTherefore, the exact number of times Melanie went to the beach in 2023 cannot be determined from",
+      "ecqd_answer": "Based on the memory records, it is not possible to determine the exact number of times Melanie went to the beach in 2023. The records state that her family goes to the beach \"once or twice a year,\" but they do not specify if a beach trip occurred in 2023 or how many times it happened that specific year.",
+      "gold_coverage_original": 0,
+      "gold_coverage_ecqd": 0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q43",
+      "question": "What kind of art does Caroline make?",
+      "gold": "abstract art",
+      "sub_queries": [
+        "What kind of art does Caroline make?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 3,
+      "n_unique": 3,
+      "original_answer": "Based on the provided memory records, Caroline primarily makes **paintings and drawings**.\n\nSpecific details about her art include:\n*   She enjoys **drawing flowers**.\n*   She uses her art to **express feelings**, **capture moments**, and **tell stories**.\n*   She specifically uses painting and drawing to **explore her gender identity** and **educate people about trans individuals**.\n*   While she has expressed interest in trying **pottery** in the future, she has not done it yet.",
+      "ecqd_answer": "Caroline makes paintings and drawings.",
+      "gold_coverage_original": 0.5,
+      "gold_coverage_ecqd": 0.0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q55",
+      "question": "What subject have Caroline and Melanie both painted?",
+      "gold": "Sunsets",
+      "sub_queries": [
+        "What subjects has Caroline painted?",
+        "What subjects has Melanie painted?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 6,
+      "n_unique": 3,
+      "original_answer": "Based on the provided memory records, there is no explicit mention of a specific subject that **both** Caroline and Melanie have painted.\n\nHere is the breakdown of the subjects mentioned for each person:\n*   **Caroline:** Painted a **self-portrait** (Record 1) and a piece for an **LGBTQ art show** (Record 7).\n*   **Melanie:** Painted a **horse** (Record 6) and an **abstract painting** (Record 10).\n\nWhile they both paint and discuss art, the records do not indicate that they have both painted the same specific",
+      "ecqd_answer": "Based on the provided memory records, it is not possible to determine the specific subject that both Caroline and Melanie have painted. The records mention that Melanie is painting (without specifying the subject) and that Caroline has a \"preview painting\" for an LGBTQ art show, but they do not state that they painted the same subject or identify the specific subject of their respective works.",
+      "gold_coverage_original": 0.0,
+      "gold_coverage_ecqd": 0.0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q66",
+      "question": "What does Melanie do with her family on hikes?",
+      "gold": "Roast marshmallows, tell stories",
+      "sub_queries": [
+        "What does Melanie do with her family on hikes?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 3,
+      "n_unique": 2,
+      "original_answer": "Based on the provided memory records, Melanie goes hiking in the mountains and explores forests with her family. These activities are described as a way to connect with nature and each other, bringing the family together and providing happiness. Specifically, she has hiked with her children and family members, finding it a relaxing way to unwind after other activities like road trips.",
+      "ecqd_answer": "Based on the memory records, there is no specific information about what Melanie does with her family *on* the hikes (such as activities like picnicking, birdwatching, or playing games). The records only state that she went hiking in the mountains with her family and described it as a relaxing way to unwind.",
+      "gold_coverage_original": 0.0,
+      "gold_coverage_ecqd": 0.0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q7",
+      "question": "What is Caroline's relationship status?",
+      "gold": "Single",
+      "sub_queries": [
+        "What is Caroline's relationship status?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 3,
+      "n_unique": 3,
+      "original_answer": "Based on the provided memory records, there is no explicit mention of Caroline's current romantic partner or marital status.\n\nHowever, the records do provide context regarding her past and current life:\n*   **Past:** She experienced a \"tough breakup\" (Record 9).\n*   **Current/Future:** She is on an \"adoption journey\" (Record 10), which often implies a stable partnership or a single parent's decision, but does not definitively state her relationship status.\n*   **Social:** She has close friends and family who support her (Records 1, 2, 6,",
+      "ecqd_answer": "Based on the provided memory records, Caroline's specific romantic relationship status (e.g., single, married, in a relationship) is not explicitly stated. The records only indicate that she is in a **social relationship** with Melanie and that her transition has led to more genuine connections with accepting friends, while some close friends distanced themselves.",
+      "gold_coverage_original": 1.0,
+      "gold_coverage_ecqd": 1.0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q71",
+      "question": "What book did Melanie read from Caroline's suggestion?",
+      "gold": "\"Becoming Nicole\"",
+      "sub_queries": [
+        "What book did Caroline suggest to Melanie?",
+        "What book did Melanie read?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 6,
+      "n_unique": 3,
+      "original_answer": "Based on the provided memory records, there is no specific title mentioned for the book Caroline recommended to Melanie.\n\nWhile the records confirm that:\n1.  Melanie is reading a book recommended by Caroline (Records 2, 3, 4, 5, 6).\n2.  Melanie's *favorite childhood book* is *Charlotte's Web* (Record 1).\n\nThere is no information linking *Charlotte's Web* to Caroline's recommendation, nor is any other specific book title identified as the one Caroline suggested. Therefore, the specific book cannot be determined from the given text.\n\nAnswer: **The specific",
+      "ecqd_answer": "The specific title of the book is not mentioned in the memory records.",
+      "gold_coverage_original": 0.0,
+      "gold_coverage_ecqd": 0.0,
+      "improved": false
+    },
+    {
+      "qid": "conv0_q75",
+      "question": "How many children does Melanie have?",
+      "gold": "3",
+      "sub_queries": [
+        "How many children does Melanie have?"
+      ],
+      "n_retrieved_total": 10,
+      "n_matched": 3,
+      "n_unique": 3,
+      "original_answer": "Based on the provided memory records, it is not possible to determine the exact number of children Melanie has.\n\nHere is the breakdown of the relevant information:\n*   **Record 1** states she \"has children\" (plural).\n*   **Record 2** mentions she has \"two younger children.\" This implies she has at least two children, but it does not specify if these are her *only* children or if she has older children as well.\n*   **Record 7** mentions \"their brother,\" which confirms that at least one of the children has a sibling, consistent with having multiple children, but",
+      "ecqd_answer": "The memory records do not specify the exact number of children Melanie has.",
+      "gold_coverage_original": 0,
+      "gold_coverage_ecqd": 0,
+      "improved": false
+    }
+  ]
+}

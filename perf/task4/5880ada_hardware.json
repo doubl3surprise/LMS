@@ -1,0 +1,11 @@
+{
+  "host": "5880ada",
+  "discovery_stdout": "{\"tokenizer_files\": [\"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/tokenizer.json\", \"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/tokenizer_config.json\", \"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/generation_config.json\", \"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/config.json\", \"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/merges.txt\", \"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/vocab.json\", \"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/chat_template.jinja\", \"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/video_preprocessor_config.json\", \"/home/jiangchuan/memory-benchmarks/model-serving/experiment/tokenizer/preprocessor_config.json\"], \"current_dirs\": [\"/home/jiangchuan/memory-benchmarks/trace_results/20261113_224139_5880ada_current\"], \"mem_total_kib\": \"MemTotal:       527119044 kB\"}\n",
+  "discovery_stderr": "",
+  "gpu_stdout": "NVIDIA RTX 5880 Ada Generation, 49140 MiB\nNVIDIA RTX 5880 Ada Generation, 49140 MiB\nNVIDIA RTX 5880 Ada Generation, 49140 MiB\nNVIDIA RTX 5880 Ada Generation, 49140 MiB\n",
+  "gpu_stderr": "",
+  "exit_codes": [
+    0,
+    0
+  ]
+}

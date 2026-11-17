@@ -1,0 +1,127 @@
+{
+  "total_failures": 10,
+  "improvable_count": 9,
+  "improvable_pct": 0.9,
+  "cases": [
+    {
+      "qid": "conv0_q11",
+      "question": "Where did Caroline move from 4 years ago?",
+      "gold": "Sweden",
+      "multi_hop_steps": [
+        "Find Caroline's historical location info",
+        "Map \"home country\" or vague location to specific place"
+      ],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "Entity linking: home country \u2192 Sweden (need Knowledge Base or multi-context synthesis)",
+      "current_top1_score": 0.6814897499739359
+    },
+    {
+      "qid": "conv0_q23",
+      "question": "What books has Melanie read?",
+      "gold": "\"Nothing is Impossible\", \"Charlotte's Web\"",
+      "multi_hop_steps": [
+        "Find all book-reading events for Melanie",
+        "Extract specific book titles from each event",
+        "Aggregate unique titles"
+      ],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "Second search on book titles might surface \"Charlotte's Web\", \"Nothing is Impossible\"",
+      "current_top1_score": 0.6893719331857753
+    },
+    {
+      "qid": "conv0_q37",
+      "question": "What did Melanie paint recently?",
+      "gold": "sunset",
+      "multi_hop_steps": [],
+      "can_improve_with_multistep": false,
+      "improvement_mechanism": "This is a semantic problem, not retrieval. Synonym detection needed.",
+      "current_top1_score": 0.6967568590971233
+    },
+    {
+      "qid": "conv0_q40",
+      "question": "How many times has Melanie gone to the beach in 2023?",
+      "gold": "2",
+      "multi_hop_steps": [
+        "Find all mentions of children count",
+        "Identify most recent/reliable source",
+        "Validate against other mentions"
+      ],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "Search specifically for \"beach\" rather than generic activities",
+      "current_top1_score": 0.6703093550806358
+    },
+    {
+      "qid": "conv0_q43",
+      "question": "What kind of art does Caroline make?",
+      "gold": "abstract art",
+      "multi_hop_steps": [
+        "Find all artworks by the person",
+        "Extract style/type descriptions",
+        "Aggregate into consolidated type"
+      ],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "Refined search for art style/type rather than generic art activities",
+      "current_top1_score": 0.649967892421419
+    },
+    {
+      "qid": "conv0_q55",
+      "question": "What subject have Caroline and Melanie both painted?",
+      "gold": "Sunsets",
+      "multi_hop_steps": [
+        "Find paintings by each person mentioned",
+        "Extract painting subjects",
+        "Find intersection of subjects"
+      ],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "True multi-hop: find each person's painting subjects, then intersect",
+      "current_top1_score": 0.5777278820762102
+    },
+    {
+      "qid": "conv0_q66",
+      "question": "What does Melanie do with her family on hikes?",
+      "gold": "Roast marshmallows, tell stories",
+      "multi_hop_steps": [],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "Search for specific activity keywords (roast, marshmallow, stories)",
+      "current_top1_score": 0.7247686459510098
+    },
+    {
+      "qid": "conv0_q7",
+      "question": "What is Caroline's relationship status?",
+      "gold": "Single",
+      "multi_hop_steps": [],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "Search for explicit relationship status mentions",
+      "current_top1_score": 0.7003650860937402
+    },
+    {
+      "qid": "conv0_q71",
+      "question": "What book did Melanie read from Caroline's suggestion?",
+      "gold": "\"Becoming Nicole\"",
+      "multi_hop_steps": [],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "Multi-step: find book-recommendation events, extract titles",
+      "current_top1_score": 0.7336280517435959
+    },
+    {
+      "qid": "conv0_q75",
+      "question": "How many children does Melanie have?",
+      "gold": "3",
+      "multi_hop_steps": [
+        "Find all mentions of children count",
+        "Identify most recent/reliable source",
+        "Validate against other mentions"
+      ],
+      "can_improve_with_multistep": true,
+      "improvement_mechanism": "Aggregation problem: need to consolidate multiple mentions of Melanie's children",
+      "current_top1_score": 0.6636378328136845
+    }
+  ],
+  "mechanisms": {
+    "Entity Linking": 1,
+    "Other": 4,
+    "Keyword-specific Search": 2,
+    "Query Refinement": 1,
+    "Multi-hop Aggregation": 1
+  }
+}

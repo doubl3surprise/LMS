@@ -1,0 +1,11 @@
+{
+  "host": "dgx",
+  "discovery_stdout": "{\"tokenizer_files\": [\"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/tokenizer_config.json\", \"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/chat_template.jinja\", \"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/generation_config.json\", \"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/config.json\", \"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/vocab.json\", \"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/video_preprocessor_config.json\", \"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/tokenizer.json\", \"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/preprocessor_config.json\", \"/home/jiangchuan/mem0-reproduction/model-serving/experiment/tokenizer/merges.txt\"], \"current_dirs\": [\"/home/jiangchuan/mem0-reproduction/trace_results/20261113_224142_dgx_current\"], \"mem_total_kib\": \"MemTotal:       127600748 kB\"}\n",
+  "discovery_stderr": "",
+  "gpu_stdout": "NVIDIA GB10, [N/A]\n",
+  "gpu_stderr": "",
+  "exit_codes": [
+    0,
+    0
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "skill_sha256": "083e741452c5edd1664daf178c4af4e3c8fce1ee5e82aec7cbaf2840e52f6b0d",
+  "upstream_template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+  "source": "https://modelscope.cn/models/Qwen/Qwen3.8-27B"
+}

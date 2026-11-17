@@ -1,0 +1,76 @@
+{
+  "schema_version": "task5-workload-1",
+  "conversation_id": "conv-26",
+  "dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "questions": [
+    {
+      "source_q_idx": 7,
+      "question": "What is Caroline's relationship status?",
+      "answer": "Single",
+      "evidence": [
+        "D3:13",
+        "D2:14"
+      ],
+      "category": 1,
+      "evidence_count": 2
+    }
+  ],
+  "conditions": [
+    {
+      "id": "k1",
+      "mode": "native",
+      "k": 1
+    },
+    {
+      "id": "k5",
+      "mode": "native",
+      "k": 5
+    },
+    {
+      "id": "k10",
+      "mode": "native",
+      "k": 10
+    },
+    {
+      "id": "k20",
+      "mode": "native",
+      "k": 20
+    },
+    {
+      "id": "b128",
+      "mode": "native",
+      "k": 20,
+      "budget": 128
+    },
+    {
+      "id": "b512",
+      "mode": "native",
+      "k": 20,
+      "budget": 512
+    },
+    {
+      "id": "len24",
+      "mode": "native",
+      "k": 20,
+      "per_memory_tokens": 24
+    },
+    {
+      "id": "k10_b512",
+      "mode": "native",
+      "k": 10,
+      "budget": 512
+    },
+    {
+      "id": "supplement",
+      "mode": "supplement",
+      "k": 5,
+      "supplement_k": 10,
+      "final_k": 10,
+      "budget": 512
+    }
+  ],
+  "expected_requests_per_platform": 9,
+  "selection": "first8 category1 with>=2 distinct evidence IDs; first2 category2,first2 category4; evidence ONLY offline selection/evaluation, never retrieval or answer input",
+  "quality": "natural stop max128; normalized EM/tokenF1 diagnostic, not official semantic accuracy; not random sample",
+  "repeats": 1
+}

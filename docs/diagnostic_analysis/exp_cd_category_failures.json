@@ -1,0 +1,32 @@
+{
+  "temporal": {
+    "total": 37,
+    "failures": 4,
+    "failure_qids": [
+      "conv0_q1",
+      "conv0_q28",
+      "conv0_q33",
+      "conv0_q58"
+    ]
+  },
+  "multihop": {
+    "total": 32,
+    "failures": 10,
+    "failure_qids": [
+      "conv0_q11",
+      "conv0_q23",
+      "conv0_q37",
+      "conv0_q40",
+      "conv0_q43",
+      "conv0_q55",
+      "conv0_q66",
+      "conv0_q7",
+      "conv0_q71",
+      "conv0_q75"
+    ]
+  },
+  "score_analysis": {
+    "correct_top1_mean": 0.7536345200648034,
+    "wrong_top1_mean": 0.7432802356150991
+  }
+}

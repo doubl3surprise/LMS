@@ -1,0 +1,164 @@
+{
+  "cases": [
+    {
+      "qid": "conv0_q11",
+      "question": "Where did Caroline move from 4 years ago?",
+      "gold": "Sweden",
+      "key_info": [
+        "Sweden"
+      ],
+      "in_dialogue": true,
+      "dialogue_snippet": "gift from my grandma in my home country, Sweden",
+      "in_storage": true,
+      "storage_matches": [
+        "Sweden"
+      ],
+      "in_top10": false,
+      "top10_matches": [],
+      "abstracted_pattern": "home country",
+      "pattern_in_top10": true,
+      "pattern_in_storage": true,
+      "correct": false
+    },
+    {
+      "qid": "conv0_q23",
+      "question": "What books has Melanie read?",
+      "gold": "Nothing is Impossible",
+      "key_info": [
+        "Becoming Nicole",
+        "Charlotte's Web",
+        "Nothing is Impossible"
+      ],
+      "in_dialogue": true,
+      "dialogue_snippet": "I loved reading \"Charlotte's Web\" as a kid",
+      "in_storage": true,
+      "storage_matches": [
+        "Becoming Nicole",
+        "Charlotte's Web"
+      ],
+      "in_top10": true,
+      "top10_matches": [
+        "Charlotte's Web"
+      ],
+      "abstracted_pattern": "reading a book recommended",
+      "pattern_in_top10": true,
+      "pattern_in_storage": true,
+      "correct": false
+    },
+    {
+      "qid": "conv0_q66",
+      "question": "What does Melanie do with her family on hikes?",
+      "gold": "Roast marshmallows, tell stories",
+      "key_info": [
+        "marshmallow",
+        "stories"
+      ],
+      "in_dialogue": true,
+      "dialogue_snippet": "We explored nature, roasted marshmallows around the campfire",
+      "in_storage": true,
+      "storage_matches": [
+        "marshmallow",
+        "stories"
+      ],
+      "in_top10": true,
+      "top10_matches": [
+        "marshmallow",
+        "stories"
+      ],
+      "abstracted_pattern": "hiking in the mountains",
+      "pattern_in_top10": true,
+      "pattern_in_storage": true,
+      "correct": false
+    },
+    {
+      "qid": "conv0_q75",
+      "question": "How many children does Melanie have?",
+      "gold": "3",
+      "key_info": [
+        "three",
+        "3"
+      ],
+      "in_dialogue": true,
+      "dialogue_snippet": "swamped with the kids & work",
+      "in_storage": true,
+      "storage_matches": [
+        "three",
+        "3"
+      ],
+      "in_top10": true,
+      "top10_matches": [
+        "3"
+      ],
+      "abstracted_pattern": "children",
+      "pattern_in_top10": true,
+      "pattern_in_storage": true,
+      "correct": false
+    },
+    {
+      "qid": "conv0_q43",
+      "question": "What kind of art does Caroline make?",
+      "gold": "abstract art",
+      "key_info": [
+        "abstract"
+      ],
+      "in_dialogue": true,
+      "dialogue_snippet": "I've been trying out abstract stuff recently",
+      "in_storage": true,
+      "storage_matches": [
+        "abstract"
+      ],
+      "in_top10": false,
+      "top10_matches": [],
+      "abstracted_pattern": "painting",
+      "pattern_in_top10": true,
+      "pattern_in_storage": true,
+      "correct": false
+    },
+    {
+      "qid": "conv0_q37",
+      "question": "What did Melanie paint recently?",
+      "gold": "sunset",
+      "key_info": [
+        "sunset"
+      ],
+      "in_dialogue": true,
+      "dialogue_snippet": "it really looks like a real sunset",
+      "in_storage": true,
+      "storage_matches": [
+        "sunset"
+      ],
+      "in_top10": true,
+      "top10_matches": [
+        "sunset"
+      ],
+      "abstracted_pattern": "painting",
+      "pattern_in_top10": true,
+      "pattern_in_storage": true,
+      "correct": false
+    },
+    {
+      "qid": "conv0_q71",
+      "question": "What book did Melanie read from Caroline's suggestion?",
+      "gold": "Becoming Nicole",
+      "key_info": [
+        "Becoming Nicole"
+      ],
+      "in_dialogue": true,
+      "dialogue_snippet": "I loved \"Becoming Nicole\" by Amy Ellis Nutt",
+      "in_storage": true,
+      "storage_matches": [
+        "Becoming Nicole"
+      ],
+      "in_top10": false,
+      "top10_matches": [],
+      "abstracted_pattern": "book recommended by Caroline",
+      "pattern_in_top10": true,
+      "pattern_in_storage": true,
+      "correct": false
+    }
+  ],
+  "stages": {
+    "Retrieval Miss (storage\u2192top10)": 3,
+    "Generation Failure (top10\u2192answer)": 4
+  }
+}

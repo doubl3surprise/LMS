@@ -1,0 +1,71 @@
+# ==============================
+# 模型权重（大文件，不下传）
+# ==============================
+# Qwen 27B 模型权重 (52GB)
+model-serving/models/
+model-serving/cache/
+model-serving/backups/
+model-serving/downloads/
+model-serving/runtime/
+model-serving/logs/
+model-serving/__pycache__/
+
+# FastEmbed 本地模型缓存 (88MB)
+models/
+
+# ==============================
+# Python 虚拟环境
+# ==============================
+.benchmark-venv/
+.venv/
+venv/
+env/
+
+# ==============================
+# Python 编译产物
+# ==============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ==============================
+# 运行时生成数据
+# ==============================
+# Qdrant 向量库（由 ingest 生成）
+database/qdrant/
+# SQLite 会话历史（由 ingest 生成）
+database/history.db
+
+# ==============================
+# 性能实验原始数据 (3.1GB)
+# ==============================
+trace_results/
+
+# ==============================
+# 敏感配置
+# ==============================
+.env
+*.env
+model-serving/.env*
+
+# ==============================
+# IDE & 编辑器
+# ==============================
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+.DS_Store
+*~
+
+# ==============================
+# 日志
+# ==============================
+*.log
+logs/

@@ -110,8 +110,21 @@ mem0-reproduction/
 - 结果文件：`eval/results/locomo/locomo_results_20261116_212630.json`
   （run_id `task1-dgx-sdk-20261116`，user_id `locomo_0_task1-dgx-sdk-20261116`，
   `chunk_size=1`、419 chunks、同模型 LLM-as-judge、`max_tokens=128`、thinking=OFF）。
-- **注意**：该次运行的 Qdrant 数据在 11-17 的目录整理中丢失（当前库里只剩 11-09 的旧
-  smoke 数据），所以它只能作为**历史基线**引用；要现场复现必须重新 ingest（见快速开始）。
+- **记忆库已找回（2026-11-17）**：这次运行的 415 条记忆原本随目录整理被 `rm -rf`，
+  但当时有一个 21 小时前的遗留适配器进程（`:8890`）仍持有被删除文件的句柄，因此从
+  `/proc/<pid>/fd/*` 完整拷了出来：`database/recovered/task1_dgx_20261116_qdrant/`，
+  并导出为 `database/exports/task1-dgx-sdk-20261116_recovered.json`（415 条 / 384 维）。
+  复现这条基线（不用重新 ingest 419 个 chunk）：
+
+  ```bash
+  # 1) 停适配器，导入历史记忆到当前库，再启动
+  scripts/debug/export_store.py import --file database/exports/task1-dgx-sdk-20261116_recovered.json
+  nohup scripts/server/start_mem0.sh > logs/mem0_adapter.log 2>&1 &
+  # 2) 用历史 run 身份评测（user_id = locomo_0_task1-dgx-sdk-20261116）
+  PROJECT_NAME=task1_dgx_sdk_20261116 RUN_ID=task1-dgx-sdk-20261116 \
+      scripts/eval/run_locomo.sh full
+  ```
+
   现行流程用固定 user_id + `/stats` 校验 + `export_store.py` 备份来防止再次发生。
 - 评分口径是同模型二元判定（CORRECT/WRONG），不是官方 LoCoMo 的 EM/F1。
 

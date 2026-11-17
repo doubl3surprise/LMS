@@ -216,7 +216,12 @@ scripts/eval/run_locomo.sh status
    旧的 300s 超时会让 runner "判失败并重试"，而适配器其实已经写库，于是同一条记忆
    被写两次（点 ID 是 uuid4，不会自动覆盖）。现默认 `MEM0_HTTP_TIMEOUT=900`，
    并用 `scripts/debug/check_duplicates.py` 校验文本层是否有重复。
-8. **适配器被 Ctrl-C/`kill` 后可能仍占着 Qdrant 锁**：uvicorn 会等在处理中的
+8. **`rm -rf` 之后数据可能还在**：进程打开的文件即使目录被删仍保留句柄，
+   `ls -l /proc/<pid>/fd` 会显示 `(deleted)`，可以直接 `cp /proc/<pid>/fd/N` 拷出来。
+   2026-11-17 就是这样从遗留适配器进程里救回了 80.9% 基线对应的 415 条记忆。
+   另需按 `meta.json` 的格式补齐集合配置（向量 384/Cosine + `bm25` 稀疏槽）才能被
+   `QdrantClient(path=...)` 重新加载。
+9. **适配器被 Ctrl-C/`kill` 后可能仍占着 Qdrant 锁**：uvicorn 会等在处理中的
    抽取线程上，端口已经释放但 `.lock` 还被持有，表现为重启时报
    `Storage folder ... already accessed by another instance`。确认没有写入在进行后，
    对该 PID 用 `kill -KILL`，再启动适配器。

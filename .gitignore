@@ -69,3 +69,7 @@ model-serving/.env*
 # ==============================
 *.log
 logs/
+
+# 记忆库备份 / 恢复产物（数据，不入库）
+database/exports/
+database/recovered/

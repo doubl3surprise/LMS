@@ -106,7 +106,7 @@ run_eval() {
     info "Run ID: $run_id"
     echo ""
 
-    python3 run_locomo_fixed.py \
+    python3 run_locomo.py \
         --project-name "$project_name" \
         --run-id "$run_id" \
         --conversations 0 \
@@ -123,7 +123,7 @@ run_ingest() {
     local timestamp=$(date +%Y%m%d_%H%M%S)
     info "开始 ingestion (对话→记忆抽取), 预计 2-3 小时"
 
-    python3 run_locomo_fixed.py \
+    python3 run_locomo.py \
         --project-name "locomo_ingest_${timestamp}" \
         --conversations 0 \
         --predict-only

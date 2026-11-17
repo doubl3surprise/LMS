@@ -48,7 +48,7 @@ scripts/perf/run.sh task6    # 并发测试
 
 - 虚拟环境: `.venv`（注意不是 `.benchmark-venv`）
 - 推理服务: SGLang on 127.0.0.1:8000
-- 记忆库: benchmark-data/qdrant
+- 记忆库: database/qdrant
 - 数据集: datasets/locomo/locomo10.json
 
 ---

@@ -53,16 +53,19 @@ def export_via_adapter(adapter: str, user_id: str, out: Path) -> dict:
 
 
 def export_via_qdrant(qdrant: str, user_id: str, out: Path, collection: str) -> dict:
-    from qdrant_client import QdrantClient
+    from qdrant_client import QdrantClient, models
 
     client = QdrantClient(path=qdrant)
     points: list[dict] = []
     try:
+        user_filter = models.Filter(
+            must=[models.FieldCondition(key="user_id", match=models.MatchValue(value=user_id))]
+        )
         offset = None
         while True:
             batch, offset = client.scroll(
                 collection, limit=256, with_payload=True, with_vectors=True, offset=offset,
-                scroll_filter={"must": [{"key": "user_id", "match": {"value": user_id}}]},
+                scroll_filter=user_filter,
             )
             for point in batch:
                 vector = point.vector

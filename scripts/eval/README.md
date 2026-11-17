@@ -7,7 +7,7 @@
 | SGLang 推理服务 | `curl http://127.0.0.1:8000/v1/models` |
 | Python 虚拟环境 | `ls ../../.benchmark-venv/bin/activate` |
 | LoCoMo 数据集 | `ls ../../datasets/locomo/locomo10.json` |
-| Mem0 记忆库 | `ls ../../benchmark-data/qdrant/collection/` |
+| Mem0 记忆库 | `../../scripts/setup/check_env.sh` 或 `../../scripts/debug/store_inventory.py --user-id locomo_0_task1_canonical` |
 
 ## 命令速查
 
@@ -45,8 +45,8 @@ Ingestion (Mem0 + Qwen)         # 对话 → 记忆抽取 → Qdrant 向量库
 
 ## 结果文件
 
-- 完整结果：`memory-benchmarks/results/locomo/locomo_results_YYYYMMDD_HHMMSS.json`
-- 逐题结果：`memory-benchmarks/results/locomo/predicted_task1_*/conv0_qN.json`
+- 完整结果：`eval/results/locomo/locomo_results_YYYYMMDD_HHMMSS.json`
+- 逐题结果：`eval/results/locomo/predicted_task1_canonical/conv0_qN.json`
 
 ## 评测题型
 

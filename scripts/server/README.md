@@ -12,7 +12,7 @@ scripts/server/start_mem0.sh
 **输出**:
 ```
 [start_mem0] 启动 Mem0 适配器服务...
-[start_mem0] 数据目录: .../benchmark-data
+[start_mem0] 数据目录: .../database（qdrant + history.db）
 [start_mem0] 监听地址: http://127.0.0.1:8888
 
 INFO: Uvicorn running on http://127.0.0.1:8888

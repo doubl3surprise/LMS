@@ -846,8 +846,15 @@ async def async_main() -> None:
                 continue
             try:
                 data = json.loads(p.read_text())
-                if data.get("category") in categories:
-                    all_evaluations.append(data)
+                if data.get("category") not in categories:
+                    continue
+                # A per-question file written by a --predict-only run contains
+                # retrieval but no verdict. Treating it as "done" would skip the
+                # question forever and silently produce a 0/N summary, so only
+                # count files that actually carry cutoff_results.
+                if not args.predict_only and not data.get("cutoff_results"):
+                    continue
+                all_evaluations.append(data)
             except (json.JSONDecodeError, KeyError):
                 continue
         print(f"  Loaded {len(all_evaluations)} existing results")

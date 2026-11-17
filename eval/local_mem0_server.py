@@ -93,6 +93,80 @@ def list_memories(user_id: str | None = Query(None)):
     except Exception as exc:
         raise HTTPException(500, str(exc)) from exc
 
+
+@app.get("/stats")
+def stats(user_id: str | None = Query(None)):
+    """Read-only store inventory.
+
+    Exists because the benchmark runner used to decide "the memory store is
+    ready" from the presence of a Qdrant directory. That check passes even when
+    the store contains nothing for the run's user_id, which made `smoke`/`full`
+    silently retrieve zero memories. This endpoint reports per-user_id counts
+    from inside the process that owns the Qdrant lock.
+    """
+    vector_store = memory.vector_store
+    client = vector_store.client
+    collection = vector_store.collection_name
+
+    collections = [c.name for c in client.get_collections().collections]
+    total_points = client.count(collection).count
+
+    users: dict[str, int] = {}
+    try:
+        facets = client.facet(collection_name=collection, key="user_id", limit=500)
+        users = {str(hit.value): hit.count for hit in facets.hits}
+    except Exception:
+        offset = None
+        while True:
+            points, offset = client.scroll(
+                collection, limit=1000, with_payload=["user_id"], with_vectors=False, offset=offset,
+            )
+            for point in points:
+                key = str((point.payload or {}).get("user_id"))
+                users[key] = users.get(key, 0) + 1
+            if not offset:
+                break
+
+    return {
+        "status": "ok",
+        "collection": collection,
+        "collections": len(collections),
+        "collection_names": collections,
+        "total_points": total_points,
+        "users": users,
+        "target_user_id": user_id,
+        "target_user_count": users.get(user_id, 0) if user_id else None,
+        "llm_model": CONFIG["llm"]["config"]["model"],
+        "embedder": CONFIG["embedder"]["config"]["model"],
+        "qdrant_path": CONFIG["vector_store"]["config"]["path"],
+    }
+
+
+@app.get("/export")
+def export_memories(user_id: str = Query(...)):
+    """Dump one user's points (payload + dense vector) as JSON for backup."""
+    vector_store = memory.vector_store
+    client = vector_store.client
+    collection = vector_store.collection_name
+
+    points: list[dict[str, Any]] = []
+    offset = None
+    while True:
+        batch, offset = client.scroll(
+            collection, limit=256, with_payload=True, with_vectors=True, offset=offset,
+            scroll_filter={"must": [{"key": "user_id", "match": {"value": user_id}}]},
+        )
+        for point in batch:
+            vector = point.vector
+            if isinstance(vector, dict):
+                vector = next(iter(vector.values()), None)
+            points.append({"id": str(point.id), "vector": vector, "payload": point.payload})
+        if not offset:
+            break
+
+    return {"collection": collection, "user_id": user_id, "count": len(points), "points": points}
+
+
 @app.delete("/memories")
 def delete_memories(user_id: str | None = Query(None)):
     if not user_id:

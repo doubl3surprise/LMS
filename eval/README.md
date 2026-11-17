@@ -29,9 +29,15 @@ eval/
 **推荐方式**（使用封装脚本）:
 
 ```bash
-../scripts/eval/run_locomo.sh smoke    # 10题快速验证
-../scripts/eval/run_locomo.sh full     # 152题完整评测
+../../scripts/eval/run_locomo.sh status   # 先看 SGLang / 适配器 / 记忆库 user_id
+../../scripts/eval/run_locomo.sh ingest   # 首次必须：抽记忆（conv-0 419 chunks, ~1.5-2h）
+../../scripts/eval/run_locomo.sh smoke    # 10题快速验证（依赖已有记忆库）
+../../scripts/eval/run_locomo.sh full     # 152题完整评测
 ```
+
+`ingest` / `smoke` / `full` 共用固定身份（`PROJECT_NAME=task1_canonical`、
+`RUN_ID=task1_canonical`、user_id `locomo_0_task1_canonical`），因此 checkpoint 和记忆库
+可以跨模式复用；换 project 名等于从头重新抽取 419 个 chunk。
 
 **直接运行**（灵活控制参数）:
 
@@ -103,8 +109,12 @@ python3 run_locomo.py \
 ## 注意
 
 - **必须用 `run_locomo.py`**，旧版已删除（max_tokens=64 截断问题）
-- 评测依赖 SGLang 在 127.0.0.1:8000 运行
-- 推理虚拟环境是 `.benchmark-venv`，不是 `.venv`
+- 评测依赖 SGLang 在 127.0.0.1:8000 运行，**且** Mem0 适配器在 127.0.0.1:8888 运行
+- 推理虚拟环境是 `.benchmark-venv`，不是 `.venv`（后者给 perf/ 用）
+- 数据集用绝对路径传入：`--dataset-path $HOME/mem0-reproduction/datasets/locomo/locomo10.json`
+  （默认相对路径基于 CWD，缺文件时会尝试联网下载，而 DGX 无外网直连）
+- `--predict-only` 产出的逐题文件只有 retrieval、没有 verdict；`--resume` 不会把它们当成
+  已完成（`run.py` 已修），否则最终汇总会变成 0/N
 
 ---
 

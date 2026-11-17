@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="810" viewBox="0 0 1160 810" font-family="-apple-system, 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1160" height="810" fill="#ffffff"/>
+
+  <text x="40" y="38" font-size="19" font-weight="700" fill="#0f172a">Mem0 + SGLang 长期记忆系统：写入路径 / 查询路径（DGX Spark，2026-11-17）</text>
+  <text x="40" y="60" font-size="12" fill="#64748b">实线＝数据流　紫色虚线＝共用服务调用　图与 docs/ARCHITECTURE.md 第 2-5 节一致</text>
+
+  <!-- lane headers -->
+  <rect x="40" y="76" width="500" height="26" fill="#1e293b"/>
+  <text x="290" y="94" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">写入路径 ingest（conv-0：19 sessions / 419 chunks / 约 1.5-2h）</text>
+  <rect x="620" y="76" width="500" height="26" fill="#1e293b"/>
+  <text x="870" y="94" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">查询路径 search → answer → judge（152 题）</text>
+
+  <!-- LEFT CHAIN -->
+  <g>
+    <rect x="40" y="122" width="500" height="56" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.2"/>
+    <text x="58" y="146" font-size="13" font-weight="700" fill="#1e1b4b">datasets/locomo/locomo10.json</text>
+    <text x="58" y="165" font-size="11" fill="#3730a3">只取 conversation，QA 与 evidence 留给评测</text>
+
+    <rect x="40" y="200" width="500" height="56" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.2"/>
+    <text x="58" y="224" font-size="13" font-weight="700" fill="#1e1b4b">get_sorted_sessions()</text>
+    <text x="58" y="243" font-size="11" fill="#3730a3">解析 session_N_date_time，按历史时间排序</text>
+
+    <rect x="40" y="278" width="500" height="56" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.2"/>
+    <text x="58" y="302" font-size="13" font-weight="700" fill="#1e1b4b">session_to_chunks()　CHUNK_SIZE = 1</text>
+    <text x="58" y="321" font-size="11" fill="#3730a3">一轮对话一个 chunk → 419 次 add（避免 32k 上下文截断）</text>
+
+    <rect x="40" y="356" width="500" height="56" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.2"/>
+    <text x="58" y="380" font-size="13" font-weight="700" fill="#1e1b4b">POST :8888/memories　{ messages, user_id, timestamp }</text>
+    <text x="58" y="399" font-size="11" fill="#3730a3">适配器给第一条消息加前缀 [Conversation session date: YYYY-MM-DD]</text>
+
+    <rect x="40" y="434" width="500" height="56" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.2"/>
+    <text x="58" y="458" font-size="13" font-weight="700" fill="#1e1b4b">Memory.add(infer=True)</text>
+    <text x="58" y="477" font-size="11" fill="#3730a3">一次 LLM 调用做加法式抽取（ADD-only，无 UPDATE/DELETE 决策环）</text>
+
+    <rect x="40" y="512" width="500" height="56" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.2"/>
+    <text x="58" y="536" font-size="13" font-weight="700" fill="#1e1b4b">FastEmbed 384d（CPU）+ 精确文本 hash 去重</text>
+    <text x="58" y="555" font-size="11" fill="#3730a3">all-MiniLM-L6-v2；仅与召回的历史记忆和本批比较</text>
+
+    <rect x="40" y="590" width="500" height="56" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="1.2"/>
+    <text x="58" y="614" font-size="13" font-weight="700" fill="#052e16">写入 Qdrant + checkpoint</text>
+    <text x="58" y="633" font-size="11" fill="#166534">benchmark_memories / _entities；_progress_0.json → _ingestion_0.json</text>
+  </g>
+
+  <line x1="290" y1="178" x2="290" y2="196" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="290" y1="256" x2="290" y2="274" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="290" y1="334" x2="290" y2="352" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="290" y1="412" x2="290" y2="430" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="290" y1="490" x2="290" y2="508" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="290" y1="568" x2="290" y2="586" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- RIGHT CHAIN -->
+  <g>
+    <rect x="620" y="122" width="500" height="56" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+    <text x="638" y="146" font-size="13" font-weight="700" fill="#451a03">LoCoMo 问题（cat 1-4，gold 不进检索）</text>
+    <text x="638" y="165" font-size="11" fill="#78350f">conversations=0，categories=1,2,3,4，152 题</text>
+
+    <rect x="620" y="200" width="500" height="56" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+    <text x="638" y="224" font-size="13" font-weight="700" fill="#451a03">POST :8888/search　{ query, user_id, limit=10 }</text>
+    <text x="638" y="243" font-size="11" fill="#78350f">同步阻塞，返回后才开始构造 prompt</text>
+
+    <rect x="620" y="278" width="500" height="56" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+    <text x="638" y="302" font-size="13" font-weight="700" fill="#451a03">Memory.search（Mem0 SDK 原生）</text>
+    <text x="638" y="321" font-size="11" fill="#78350f">语义候选 + BM25 + 实体加分融合；filters.user_id 隔离会话</text>
+
+    <rect x="620" y="356" width="500" height="56" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+    <text x="638" y="380" font-size="13" font-weight="700" fill="#451a03">top-10 按 score 降序</text>
+    <text x="638" y="399" font-size="11" fill="#78350f">保留 rank / score / created_at（created_at 是入库时间）</text>
+
+    <rect x="620" y="434" width="500" height="56" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+    <text x="638" y="458" font-size="13" font-weight="700" fill="#451a03">构造简洁直答 prompt</text>
+    <text x="638" y="477" font-size="11" fill="#78350f">eval/run_locomo.py monkey-patch 官方 7 步模板 → 记忆列表 + 问题</text>
+
+    <rect x="620" y="512" width="500" height="56" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+    <text x="638" y="536" font-size="13" font-weight="700" fill="#451a03">SGLang 生成答案　thinking=OFF, max_tokens=128</text>
+    <text x="638" y="555" font-size="11" fill="#78350f">judge 另发一次请求：json_object → CORRECT / WRONG</text>
+
+    <rect x="620" y="590" width="500" height="56" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="1.2"/>
+    <text x="638" y="614" font-size="13" font-weight="700" fill="#052e16">落盘结果</text>
+    <text x="638" y="633" font-size="11" fill="#166534">predicted_&lt;project&gt;/conv0_qN.json → locomo_results_&lt;ts&gt;.json</text>
+  </g>
+
+  <line x1="870" y1="178" x2="870" y2="196" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="870" y1="256" x2="870" y2="274" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="870" y1="334" x2="870" y2="352" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="870" y1="412" x2="870" y2="430" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="870" y1="490" x2="870" y2="508" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="870" y1="568" x2="870" y2="586" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- shared services -->
+  <rect x="40" y="676" width="1080" height="112" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="5 4"/>
+  <text x="58" y="700" font-size="12" font-weight="700" fill="#334155">共用组件（两条路径打的是同一套服务，同一时刻只应有一个负载在跑）</text>
+
+  <rect x="58" y="712" width="330" height="60" rx="6" fill="#ffffff" stroke="#475569"/>
+  <text x="72" y="734" font-size="12" font-weight="700" fill="#0f172a">SGLang　127.0.0.1:8000</text>
+  <text x="72" y="752" font-size="10.5" fill="#475569">qwen3.8-27b-zh　BF16　TP=1　max_model_len=32768</text>
+  <text x="72" y="766" font-size="10.5" fill="#475569">抽取 / 回答 / 评判 三处都调它</text>
+
+  <rect x="404" y="712" width="330" height="60" rx="6" fill="#ffffff" stroke="#475569"/>
+  <text x="418" y="734" font-size="12" font-weight="700" fill="#0f172a">Mem0 适配器　127.0.0.1:8888</text>
+  <text x="418" y="752" font-size="10.5" fill="#475569">/memories /search /stats /export /health</text>
+  <text x="418" y="766" font-size="10.5" fill="#475569">mem0ai 2.2.1 + FastEmbed，独占 Qdrant 文件锁</text>
+
+  <rect x="750" y="712" width="352" height="60" rx="6" fill="#ffffff" stroke="#475569"/>
+  <text x="764" y="734" font-size="12" font-weight="700" fill="#0f172a">Qdrant（嵌入式）+ SQLite</text>
+  <text x="764" y="752" font-size="10.5" fill="#475569">database/qdrant：benchmark_memories / _entities</text>
+  <text x="764" y="766" font-size="10.5" fill="#475569">database/history.db：变更历史（非原始对话备份）</text>
+
+  <line x1="290" y1="646" x2="290" y2="708" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="870" y1="646" x2="870" y2="708" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- dashed: qdrant reuse -->
+  <path d="M 60 646 L 60 700 L 340 700 L 340 634" fill="none" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="6 4" marker-end="url(#arrowDash)"/>
+  <text x="72" y="694" font-size="10" fill="#7c3aed">检索读取同一集合（user_id 过滤）</text>
+</svg>

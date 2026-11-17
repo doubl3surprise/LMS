@@ -119,9 +119,10 @@ mem0-reproduction/
 失败中约一半是检索没带回答案、一半是答案在 top-10 里但模型没推理出来；
 余弦分数对正确/错误几乎无区分力（0.754 vs 0.743）。多跳是最弱项。
 
-性能（历史测量，条件与口径见 `trace_results/task3_summary/report.md`）：DGX 单卡
-端到端比 4×RTX 5880 Ada 慢约 10-12 倍，瓶颈在 decode；单卡输出的"每个 token 成本"
-相对 prefill 更高，因此记忆规模/检索深度的最优取值随设备变化。
+性能（历史测量，条件与口径见 `trace_results/task3_summary/report.md`）：同一 879 条
+记忆、K=10 的原生检索路径，DGX 单卡 Response 3982 ms vs 4×RTX 5880 Ada 431 ms（约 9.2×），
+DGX 上 decode 占端到端 83%；换成完整历史（约 1.51 万输入 token）后两平台都转为 prefill
+主导（DGX prefill 11.5 s）。所以记忆规模/检索深度的最优取值随设备变化，不能按单卡比例外推。
 
 ---
 
